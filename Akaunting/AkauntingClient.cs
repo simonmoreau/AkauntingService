@@ -10,10 +10,11 @@ namespace Akaunting
 
         public AkauntingClient(HttpClient client) : base(client)
         {
-            _client.BaseAddress = new Uri("https://akaunting.bim42.com/api/");
+            string url = Environment.GetEnvironmentVariable("akaunting_url");
+            _client.BaseAddress = new Uri(url);
         }
 
-                public async Task<Status> Ping(CancellationToken cancellationToken)
+        public async Task<Status> Ping(CancellationToken cancellationToken)
         {
             string path = "ping";
             HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, path);

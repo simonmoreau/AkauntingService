@@ -9,7 +9,7 @@ namespace Akaunting
 {
     public class AkauntingReccord
     {
-                private readonly AkauntingClient _akauntingClient;
+        private readonly AkauntingClient _akauntingClient;
 
         public AkauntingReccord(AkauntingClient akauntingClient)
         {
@@ -17,7 +17,7 @@ namespace Akaunting
         }
 
         [FunctionName("AkauntingReccord")]
-        public async Task RunAsync([QueueTrigger("akaunting-queue", Connection = "")]Status myQueueItem, 
+        public async Task RunAsync([QueueTrigger("akaunting-queue", Connection = "")] Status myQueueItem,
         ILogger log)
         {
             log.LogInformation($"C# Queue trigger function processed: {myQueueItem.ToString()}");
