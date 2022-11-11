@@ -22,14 +22,12 @@ namespace Akaunting
 
             _client = client;
             ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls12;
+            ProductInfoHeaderValue productValue = new ProductInfoHeaderValue("AkauntingBot", "1.0");
+            _client.DefaultRequestHeaders.UserAgent.Add(productValue);
         }
 
         protected async Task<T> SendRequest<T>(HttpRequestMessage request, CancellationToken cancellationToken)
         {
-            // Debug.WriteLine(DateTime.Now.ToString() + " - " + "SendRequest " + request.RequestUri.ToString() + " - " + System.Threading.Thread.CurrentThread.ManagedThreadId);
-            request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            request.Headers.AcceptEncoding.Add(new StringWithQualityHeaderValue("gzip"));
-
             try
             {
                 using (HttpResponseMessage response = await _client.SendAsync(request,
@@ -52,7 +50,7 @@ namespace Akaunting
                         }
                     }
 
-                    
+
                     Stream stream = await response.Content.ReadAsStreamAsync();
                     JsonSerializerOptions options = new JsonSerializerOptions();
                     T result = await JsonSerializer.DeserializeAsync<T>(stream, options);
@@ -62,13 +60,13 @@ namespace Akaunting
             }
             catch (OperationCanceledException ocException)
             {
-                // Debug.WriteLine(DateTime.Now.ToString() + " - " + $"An request operation was cancelled with message {ocException.Message}. " + request.RequestUri);
+                Console.WriteLine(DateTime.Now.ToString() + " - " + $"An request operation was cancelled with message {ocException.Message}. " + request.RequestUri);
                 T value = default;
                 return value;
             }
             catch (Exception ex)
             {
-                // Debug.WriteLine(DateTime.Now.ToString() + " - " + $"Something went wrong: " + ex.Message + " - " + request.RequestUri);
+                Console.WriteLine(DateTime.Now.ToString() + " - " + $"Something went wrong: " + ex.Message + " - " + request.RequestUri);
                 throw ex;
             }
         }
