@@ -7,8 +7,9 @@ using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using kauntingService.Akaunting;
 
-namespace Akaunting
+namespace AkauntingService
 {
     public static class Debug
     {

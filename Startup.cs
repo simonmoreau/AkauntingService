@@ -1,12 +1,13 @@
 using System.Net;
 using System.Net.Http;
+using kauntingService.Akaunting;
 using Microsoft.Azure.Functions.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-[assembly: FunctionsStartup(typeof(Akaunting.Startup))]
+[assembly: FunctionsStartup(typeof(AkauntingService.Startup))]
 
-namespace Akaunting
+namespace AkauntingService
 {
     public class Startup : FunctionsStartup
     {

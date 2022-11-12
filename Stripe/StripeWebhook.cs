@@ -10,7 +10,7 @@ using System.Text.Json;
 using Microsoft.Azure.Cosmos.Table;
 using Stripe;
 
-namespace Akaunting
+namespace AkauntingService
 {
     public static class StripeWebhook
     {

@@ -5,7 +5,7 @@ using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Extensions.Logging;
 
-namespace Akaunting
+namespace kauntingService.Akaunting
 {
     public class AkauntingReccord
     {

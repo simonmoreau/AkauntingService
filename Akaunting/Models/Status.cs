@@ -1,6 +1,6 @@
 using System;
 
-namespace Akaunting
+namespace AkauntingService
 {
     public class Status
     {

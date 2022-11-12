@@ -1,6 +1,6 @@
 using Microsoft.Extensions.Logging;
 
-namespace Akaunting
+namespace AkauntingService
 {
     internal class AkauntingLoggerProvider : ILoggerProvider
     {

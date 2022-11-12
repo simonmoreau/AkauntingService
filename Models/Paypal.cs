@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text.Json.Serialization;
 using Microsoft.Azure.Cosmos.Table;
 
-namespace Akaunting
+namespace AkauntingService.Paypal
 {
     // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
     public class Amount

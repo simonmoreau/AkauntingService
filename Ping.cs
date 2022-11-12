@@ -8,8 +8,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using System.Text.Json;
 using Microsoft.Azure.Cosmos.Table;
+using AkauntingService.Paypal;
 
-namespace Akaunting
+namespace AkauntingService
 {
     public static class Ping
     {
